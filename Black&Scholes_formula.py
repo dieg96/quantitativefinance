@@ -1,3 +1,5 @@
+#Valuation of European Call Option with Black and Scholes formula. 
+
 import numpy as np
 from scipy.stats import norm
 
@@ -12,9 +14,9 @@ def formula_BS(S0, K, T, r, sig):
 # Call option price(C)
   # norm.cdf(x) Normal standard cumulative distribution function of X 
      
-  # norm.cdf(d1) --> Delta (sensibilità) dell'opzione Call.  
+  # norm.cdf(d1) --> Call Option Delta  
     
-  # norm.cdf(d2) --> probabilità (sotto la misura neutrale al rischio) che l'opzione scada "in the money" (ITM)
+  # norm.cdf(d2) --> probabily of the Option expiring "in the money" (ITM)
    
   C = S0 * norm.cdf(d1) - np.exp(-r * T) * K * norm.cdf(d2)
   
